@@ -61,7 +61,7 @@ export function Footer() {
           </h3>
           <ul className="flex flex-col gap-3 font-sans text-sm font-semibold text-fg/75">
             <li>
-              <a href="#catalogos" className="hover:text-cobalt-500 transition-colors">
+              <a href="#descargas" className="hover:text-cobalt-500 transition-colors">
                 Catálogos Virtuales
               </a>
             </li>

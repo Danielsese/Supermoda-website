@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Hero } from "@/components/sections/hero";
 import { Categories } from "@/components/sections/categories";
+import { Catalogs } from "@/components/sections/catalogs";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { CalculatorSection } from "@/components/sections/calculator-section";
 import { Testimonials } from "@/components/sections/testimonials";
@@ -19,8 +20,11 @@ export default function Home() {
         {/* Asymmetric Hero */}
         <Hero />
         
-        {/* Bento Products & Categories */}
+        {/* Bento Products & Categories Overview */}
         <Categories />
+
+        {/* Real Brand PDF Catalogs Download Grid */}
+        <Catalogs />
         
         {/* Bento Benefits / Business Model */}
         <HowItWorks />

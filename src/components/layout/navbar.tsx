@@ -40,7 +40,7 @@ export function Navbar() {
   };
 
   const navLinks = [
-    { name: "Catálogos", href: "#catalogos" },
+    { name: "Catálogos", href: "#descargas" },
     { name: "Cómo Funciona", href: "#como-funciona" },
     { name: "Calculadora", href: "#calculadora" },
     { name: "Testimonios", href: "#testimonios" },
