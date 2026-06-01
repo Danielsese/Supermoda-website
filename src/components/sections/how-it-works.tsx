@@ -1,131 +1,69 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Sparkle, ShieldCheck, DeviceMobile, UsersThree, ArrowRight } from "@phosphor-icons/react";
-import { Button } from "../ui/button";
+import { Sparkle, ShieldCheck, DeviceMobile, UsersThree } from "@phosphor-icons/react";
 
 export function HowItWorks() {
+  const steps = [
+    {
+      icon: <Sparkle className="w-6 h-6 text-accent-600" weight="regular" />,
+      title: "30% Comisión",
+      description: "Ganas el 30% neto sobre todo lo que vendas. Sin metas obligatorias ni mínimos mensuales.",
+    },
+    {
+      icon: <ShieldCheck className="w-6 h-6 text-accent-600" weight="regular" />,
+      title: "Cero Riesgo",
+      description: "No compras inventario. Te damos los catálogos virtuales gratis; tú solo muestras y vendes.",
+    },
+    {
+      icon: <DeviceMobile className="w-6 h-6 text-accent-600" weight="regular" />,
+      title: "Catálogos Interactivos",
+      description: "Lleva tu negocio en el celular. Tus clientes exploran el PDF y te envían pedidos por WhatsApp.",
+    },
+    {
+      icon: <UsersThree className="w-6 h-6 text-accent-600" weight="regular" />,
+      title: "Comunidad",
+      description: "Soporte personalizado en WhatsApp para resolver dudas y optimizar tus ventas siempre.",
+    },
+  ];
+
   return (
-    <section id="como-funciona" className="py-32 lg:py-36 bg-card-bg border-t border-card-border transition-colors duration-300">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+    <section id="como-funciona" className="py-32 lg:py-40 bg-bg transition-colors duration-300">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
         
-        {/* Section Header */}
-        <div className="max-w-2xl mb-20 text-left">
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-fg font-normal tracking-tight leading-none mb-4">
+        <div className="flex flex-col items-center text-center mb-24">
+          <span className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-accent-600 mb-6">
+            Modelo de Negocio
+          </span>
+          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-fg font-normal tracking-tight leading-none mb-8">
             Emprende con Confianza
           </h2>
-          <p className="font-sans text-base text-fg/60 leading-relaxed max-w-[50ch]">
-            Diseñamos un modelo de negocio simple y altamente rentable para que puedas crecer a tu propio ritmo sin asumir riesgos económicos.
+          <p className="font-sans text-base text-fg/50 leading-relaxed max-w-[50ch]">
+            Diseñamos un modelo simple y rentable para que crezcas a tu ritmo, sin asumir riesgos económicos.
           </p>
         </div>
 
-        {/* Bento Grid layout - Stack on mobile/tablet, side-by-side on lg desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
-          
-          {/* Cell 1: High Contrast Saturated Commission Block */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-4 bg-cobalt-500 rounded-2xl p-8 md:p-10 flex flex-col justify-between min-h-[360px] shadow-lg shadow-cobalt-500/10 text-white relative overflow-hidden"
-          >
-            {/* Background Light Pattern */}
-            <div className="absolute -right-12 -bottom-12 w-48 h-48 rounded-full bg-white/5 blur-2xl pointer-events-none" />
-            
-            <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
-              <Sparkle weight="bold" className="w-6 h-6 text-gold-100" />
-            </div>
-
-            <div>
-              <h3 className="font-serif text-5xl font-semibold mb-2">30%</h3>
-              <p className="font-sans text-sm font-bold uppercase tracking-wider text-white/50 mb-1">
-                Comisión Fija
-              </p>
-              <p className="font-sans text-base text-white/80 leading-relaxed max-w-[20ch]">
-                Ganas el 30% neto sobre todo lo que vendas. Sin metas obligatorias ni mínimos mensuales.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Cell 2: Zero Investment Details */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-8 bg-bg border border-card-border rounded-2xl p-8 md:p-10 flex flex-col justify-between min-h-[300px] transition-colors duration-300"
-          >
-            <div className="w-12 h-12 rounded-full bg-cobalt-500/5 dark:bg-cobalt-500/10 flex items-center justify-center border border-cobalt-500/10">
-              <ShieldCheck weight="bold" className="w-6 h-6 text-cobalt-500" />
-            </div>
-
-            <div>
-              <h3 className="font-serif text-3xl text-fg font-normal mb-3">
-                Inversión Cero. Riesgo Cero.
-              </h3>
-              <p className="font-sans text-sm text-fg/60 leading-relaxed max-w-[55ch] mb-4">
-                No tienes que comprar inventario por adelantado ni pagar suscripciones de ingreso. Nosotros te proporcionamos los catálogos virtuales de forma gratuita; tú solo te encargas de mostrar y vender.
-              </p>
-              <div className="flex gap-6">
-                <div className="flex items-center gap-2 text-xs font-bold text-fg/40 uppercase tracking-wider">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500" /> Sin Costos Ocultos
-                </div>
-                <div className="flex items-center gap-2 text-xs font-bold text-fg/40 uppercase tracking-wider">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500" /> Registros Inmediatos
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ type: "spring", stiffness: 100, damping: 20, delay: i * 0.1 }}
+              className="flex flex-col items-center text-center"
+            >
+              <div className="w-16 h-16 rounded-full bg-neutral-100 flex items-center justify-center mb-8">
+                {step.icon}
               </div>
-            </div>
-          </motion.div>
-
-          {/* Cell 3: Catalog Digital Access */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-8 bg-bg border border-card-border rounded-2xl p-8 md:p-10 flex flex-col justify-between min-h-[300px] transition-colors duration-300"
-          >
-            <div className="w-12 h-12 rounded-full bg-cobalt-500/5 dark:bg-cobalt-500/10 flex items-center justify-center border border-cobalt-500/10">
-              <DeviceMobile weight="bold" className="w-6 h-6 text-cobalt-500" />
-            </div>
-
-            <div>
-              <h3 className="font-serif text-3xl text-fg font-normal mb-3">
-                Catálogos Virtuales e Interactivos
+              <h3 className="font-serif text-2xl font-normal text-fg mb-4">
+                {step.title}
               </h3>
-              <p className="font-sans text-sm text-fg/60 leading-relaxed max-w-[55ch]">
-                Lleva tu negocio contigo a donde vayas. Distribuye los catálogos en formato digital (PDF o enlace interactivo) a través de WhatsApp o redes sociales. Tus clientes exploran y te envían sus pedidos con un solo clic.
+              <p className="font-sans text-sm text-fg/50 leading-relaxed max-w-[30ch]">
+                {step.description}
               </p>
-            </div>
-          </motion.div>
-
-          {/* Cell 4: Community Support */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-4 bg-bg border border-card-border rounded-2xl p-8 md:p-10 flex flex-col justify-between min-h-[300px] transition-colors duration-300"
-          >
-            <div className="w-12 h-12 rounded-full bg-cobalt-500/5 dark:bg-cobalt-500/10 flex items-center justify-center border border-cobalt-500/10">
-              <UsersThree weight="bold" className="w-6 h-6 text-cobalt-500" />
-            </div>
-
-            <div>
-              <h3 className="font-serif text-3xl text-fg font-normal mb-2">Comunidad</h3>
-              <p className="font-sans text-sm text-fg/60 leading-relaxed max-w-[25ch] mb-4">
-                Recibes soporte personalizado en nuestro canal de WhatsApp para resolver dudas y optimizar tus ventas.
-              </p>
-              <a
-                href="#registro"
-                className="inline-flex items-center gap-1.5 text-sm font-bold text-cobalt-500 hover:text-cobalt-600 transition-colors uppercase tracking-wider group"
-              >
-                Únete Ya <ArrowRight weight="bold" className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
-            </div>
-          </motion.div>
-
+            </motion.div>
+          ))}
         </div>
 
       </div>

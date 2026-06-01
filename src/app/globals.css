@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 @source "..";
 
@@ -7,75 +8,68 @@
   --color-card-bg: var(--card-background);
   --color-card-border: var(--card-border);
   
-  --color-cobalt-50: #f0f6fc;
-  --color-cobalt-100: #e1edf9;
-  --color-cobalt-500: #0f4c81;
-  --color-cobalt-600: #0a3a65;
-  --color-cobalt-700: #072a4b;
+  /* Primary Accent: Rosewood */
+  --color-accent-50: #fff1f2;
+  --color-accent-100: #ffe4e6;
+  --color-accent-500: #e11d48;
+  --color-accent-600: #be123c;
+  --color-accent-900: #881337;
   
-  --color-gold-50: #fbf8eb;
-  --color-gold-100: #f6eec3;
-  --color-gold-500: #c5a03c;
-  --color-gold-600: #aa852a;
+  /* Neutral: Zinc/Charcoal */
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f4f4f5;
+  --color-neutral-200: #e4e4e7;
+  --color-neutral-800: #27272a;
+  --color-neutral-900: #18181b;
+  --color-neutral-950: #09090b;
+
+  --font-sans: "Jost", system-ui, sans-serif;
+  --font-serif: "Bodoni Moda", Georgia, serif;
   
-  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
-  --font-serif: var(--font-cormorant-garamond), Georgia, serif;
-  
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
-  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
   
   --animate-shimmer: shimmer 2.5s infinite linear;
 }
 
 @keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
 :root {
-  --background: #fdfdfb;
-  --foreground: #101012;
+  --background: #fcfcfc;
+  --foreground: #18181b;
   --card-background: #ffffff;
-  --card-border: #e8e8e3;
+  --card-border: rgba(228, 228, 231, 0.6);
   
   color-scheme: light;
 }
 
-/* Dark mode class-based */
 .dark {
   --background: #09090b;
   --foreground: #fafafa;
-  --card-background: #111114;
-  --card-border: #222226;
+  --card-background: #18181b;
+  --card-border: rgba(39, 39, 42, 0.6);
   
   color-scheme: dark;
 }
 
-/* Dark mode system-based fallback */
 @media (prefers-color-scheme: dark) {
   :root:not(.light-mode) {
     --background: #09090b;
     --foreground: #fafafa;
-    --card-background: #111114;
-    --card-border: #222226;
-    
+    --card-background: #18181b;
+    --card-border: rgba(39, 39, 42, 0.6);
     color-scheme: dark;
   }
 }
 
-/* Force light mode class override if needed */
 .light-mode {
-  --background: #fdfdfb;
-  --foreground: #101012;
+  --background: #fcfcfc;
+  --foreground: #18181b;
   --card-background: #ffffff;
-  --card-border: #e8e8e3;
-  
+  --card-border: rgba(228, 228, 231, 0.6);
   color-scheme: light;
 }
 
@@ -94,23 +88,22 @@ html {
 body {
   background-color: var(--background);
   color: var(--foreground);
-  transition: background-color 0.4s var(--ease-out-expo), color 0.4s var(--ease-out-expo);
+  transition: background-color 0.4s var(--ease-smooth), color 0.4s var(--ease-smooth);
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
 
 ::selection {
-  background-color: var(--color-cobalt-100);
-  color: var(--color-cobalt-700);
+  background-color: var(--color-accent-100);
+  color: var(--color-accent-900);
 }
 
 .dark ::selection {
-  background-color: var(--color-cobalt-700);
-  color: var(--color-cobalt-50);
+  background-color: var(--color-accent-900);
+  color: var(--color-accent-50);
 }
 
-/* Custom premium scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -121,10 +114,14 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--card-border);
+  background: var(--color-neutral-200);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-cobalt-500);
+  background: var(--color-accent-500);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-800);
 }

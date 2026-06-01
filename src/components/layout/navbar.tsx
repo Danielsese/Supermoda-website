@@ -13,7 +13,6 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    // Detect current theme class
     const isDark = document.documentElement.classList.contains("dark");
     setTheme(isDark ? "dark" : "light");
 
@@ -51,17 +50,16 @@ export function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "py-3 bg-bg/85 backdrop-blur-md border-b border-card-border shadow-sm shadow-fg/5"
-            : "py-5 bg-transparent"
+            ? "py-4 bg-bg/80 backdrop-blur-md border-b border-card-border"
+            : "py-8 bg-transparent"
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between">
-          {/* Logo Section */}
-          <Link href="#" className="flex items-center gap-3 active:scale-97 transition-transform duration-200">
-            <div className="relative w-36 h-12 md:w-44 md:h-14 overflow-hidden rounded-md bg-white p-1">
+          <Link href="#" className="flex items-center gap-3 active:scale-95 transition-transform duration-300">
+            <div className="relative w-36 h-12 md:w-44 md:h-14 overflow-hidden">
               <Image
                 src="/logo.jpg"
-                alt="Supermoda Online Logo"
+                alt="Supermoda Logo"
                 fill
                 priority
                 className="object-contain"
@@ -69,30 +67,28 @@ export function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="font-sans text-sm font-medium text-fg/80 hover:text-cobalt-500 transition-colors duration-200"
+                className="font-sans text-sm font-medium text-fg/70 hover:text-fg transition-colors duration-300"
               >
                 {link.name}
               </a>
             ))}
           </nav>
 
-          {/* Right Actions (Theme Switch, CTA, Mobile Toggle) */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-full bg-card-bg hover:bg-card-border/30 border border-card-border text-fg active:scale-95 transition-all duration-150 cursor-pointer"
+              className="p-2.5 rounded-full text-fg/60 hover:text-fg active:scale-95 transition-all duration-300 cursor-pointer"
               aria-label="Toggle theme mode"
             >
               {theme === "dark" ? (
-                <Sun className="w-5 h-5 text-gold-500" weight="bold" />
+                <Sun className="w-5 h-5" weight="regular" />
               ) : (
-                <Moon className="w-5 h-5 text-cobalt-500" weight="bold" />
+                <Moon className="w-5 h-5" weight="regular" />
               )}
             </button>
 
@@ -105,65 +101,54 @@ export function Navbar() {
               Empezar Hoy
             </Button>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(true)}
-              className="md:hidden p-2 text-fg hover:text-cobalt-500 transition-colors cursor-pointer"
+              className="md:hidden p-2 text-fg/60 hover:text-fg transition-colors cursor-pointer"
               aria-label="Open menu"
             >
-              <List className="w-6 h-6" weight="bold" />
+              <List className="w-6 h-6" weight="regular" />
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Sidebar Menu */}
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Backdrop Blur Overlay */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-50 bg-black/20 backdrop-blur-sm md:hidden"
             />
-
-            {/* Sidebar Container */}
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", bounce: 0.1, duration: 0.4 }}
-              className="fixed right-0 top-0 bottom-0 z-50 w-72 max-w-full bg-bg border-l border-card-border p-6 shadow-2xl flex flex-col justify-between md:hidden"
+              transition={{ type: "spring", stiffness: 100, damping: 20 }}
+              className="fixed right-0 top-0 bottom-0 z-50 w-80 max-w-full bg-bg border-l border-card-border p-8 shadow-2xl flex flex-col justify-between md:hidden"
             >
               <div>
-                <div className="flex items-center justify-between mb-8">
-                  <div className="relative w-28 h-9 overflow-hidden rounded bg-white p-0.5">
-                    <Image
-                      src="/logo.jpg"
-                      alt="Supermoda Online Logo"
-                      fill
-                      className="object-contain"
-                    />
+                <div className="flex items-center justify-between mb-12">
+                  <div className="relative w-32 h-10 overflow-hidden">
+                    <Image src="/logo.jpg" alt="Supermoda Logo" fill className="object-contain" />
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="p-2 text-fg hover:text-cobalt-500 active:scale-95 transition-all cursor-pointer"
-                    aria-label="Close menu"
+                    className="p-2 text-fg/60 hover:text-fg active:scale-95 transition-all cursor-pointer"
                   >
-                    <X className="w-5 h-5" weight="bold" />
+                    <X className="w-6 h-6" weight="regular" />
                   </button>
                 </div>
 
-                <nav className="flex flex-col gap-5">
+                <nav className="flex flex-col gap-8">
                   {navLinks.map((link) => (
                     <a
                       key={link.name}
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="font-sans text-base font-semibold text-fg/80 hover:text-cobalt-500 transition-colors py-1.5"
+                      className="font-sans text-lg font-medium text-fg/80 hover:text-fg transition-colors"
                     >
                       {link.name}
                     </a>
@@ -171,7 +156,7 @@ export function Navbar() {
                 </nav>
               </div>
 
-              <div className="flex flex-col gap-4 mt-auto">
+              <div className="flex flex-col gap-6 mt-auto">
                 <Button
                   variant="primary"
                   size="md"
@@ -182,7 +167,7 @@ export function Navbar() {
                   Empezar Hoy
                 </Button>
                 <p className="text-center font-sans text-xs text-fg/40 font-medium">
-                  Supermoda Online &copy; {new Date().getFullYear()}
+                  Supermoda &copy; {new Date().getFullYear()}
                 </p>
               </div>
             </motion.div>

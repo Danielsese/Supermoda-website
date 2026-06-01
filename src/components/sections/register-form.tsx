@@ -48,63 +48,60 @@ export function RegisterForm() {
   };
 
   return (
-    <section id="registro" className="py-32 lg:py-36 bg-bg border-t border-card-border transition-colors duration-300 relative">
-      <div className="max-w-[760px] mx-auto px-6">
+    <section id="registro" className="py-32 lg:py-40 bg-card-bg transition-colors duration-300">
+      <div className="max-w-[700px] mx-auto px-6">
         
-        {/* Form Container Card */}
-        <div className="bg-card-bg border border-card-border p-10 md:p-14 rounded-3xl shadow-xl shadow-fg/5 transition-colors duration-300">
+        <div className="bg-bg border border-card-border p-12 md:p-16 rounded-[2rem]">
           
           <AnimatePresence mode="wait">
             {status === "success" ? (
-              /* Success Messaging */
               <motion.div
                 key="success"
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="text-center py-8 flex flex-col items-center gap-6"
+                className="text-center flex flex-col items-center gap-8"
               >
-                <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-500">
-                  <CheckCircle weight="fill" className="w-10 h-10 animate-bounce" />
+                <div className="w-20 h-20 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                  <CheckCircle className="w-10 h-10" weight="regular" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-3xl text-fg font-normal mb-2">
-                    ¡Registro Recibido con Éxito!
+                  <h3 className="font-serif text-4xl text-fg font-normal mb-4">
+                    Registro Exitoso
                   </h3>
-                  <p className="font-sans text-sm text-fg/60 leading-relaxed max-w-[45ch] mx-auto">
-                    Excelente decisión, **{formData.name}**. Un asesor de nuestro equipo de soporte se pondrá en contacto contigo en las próximas 24 horas a través de WhatsApp para habilitar tu catálogo.
+                  <p className="font-sans text-base text-fg/60 leading-relaxed max-w-[40ch] mx-auto">
+                    Excelente decisión, {formData.name}. Un asesor se pondrá en contacto contigo en breve vía WhatsApp.
                   </p>
                 </div>
-                <Button variant="secondary" size="md" onClick={() => setStatus("idle")}>
+                <Button variant="ghost" size="md" onClick={() => setStatus("idle")} className="mt-4">
                   Volver a Empezar
                 </Button>
               </motion.div>
             ) : (
-              /* Core Input Form */
               <motion.div
                 key="form"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="flex flex-col gap-8"
+                className="flex flex-col gap-12"
               >
-                {/* Form Headers */}
                 <div className="text-center">
-                  <h2 className="font-serif text-3xl sm:text-4xl text-fg font-normal tracking-tight mb-3">
-                    Únete como Distribuidora
+                  <span className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-accent-600 mb-6 block">
+                    Únete Hoy
+                  </span>
+                  <h2 className="font-serif text-4xl sm:text-5xl text-fg font-normal tracking-tight mb-4">
+                    Comienza a Vender
                   </h2>
-                  <p className="font-sans text-sm text-fg/60 max-w-[45ch] mx-auto leading-relaxed">
-                    Completa tus datos y comienza a generar ingresos de inmediato recomendando catálogos interactivos.
+                  <p className="font-sans text-base text-fg/50 max-w-[45ch] mx-auto leading-relaxed">
+                    Completa tus datos y obtén tus catálogos virtuales al instante.
                   </p>
                 </div>
 
-                {/* Main Form Elements */}
-                <form onSubmit={handleSubmit} className="flex flex-col gap-7">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-8">
                   
-                  {/* Row: Name */}
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="name" className="font-sans text-xs font-bold uppercase tracking-wider text-fg/50">
+                  <div className="flex flex-col gap-3">
+                    <label htmlFor="name" className="font-sans text-xs font-semibold uppercase tracking-[0.1em] text-fg/50">
                       Nombre Completo
                     </label>
                     <input
@@ -114,14 +111,13 @@ export function RegisterForm() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="Ej. Ana María Restrepo"
-                      className="w-full bg-bg border border-card-border focus:border-cobalt-500 focus:ring-1 focus:ring-cobalt-500 rounded-xl px-4 py-3 font-sans text-sm outline-none text-fg transition-colors placeholder:text-fg/30"
+                      placeholder="Ana Restrepo"
+                      className="w-full bg-transparent border-b border-card-border focus:border-accent-600 px-0 py-3 font-sans text-base outline-none text-fg transition-colors placeholder:text-fg/20"
                     />
                   </div>
 
-                  {/* Row: Email */}
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="email" className="font-sans text-xs font-bold uppercase tracking-wider text-fg/50">
+                  <div className="flex flex-col gap-3">
+                    <label htmlFor="email" className="font-sans text-xs font-semibold uppercase tracking-[0.1em] text-fg/50">
                       Correo Electrónico
                     </label>
                     <input
@@ -131,14 +127,13 @@ export function RegisterForm() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="ana.restrepo@example.com"
-                      className="w-full bg-bg border border-card-border focus:border-cobalt-500 focus:ring-1 focus:ring-cobalt-500 rounded-xl px-4 py-3 font-sans text-sm outline-none text-fg transition-colors placeholder:text-fg/30"
+                      placeholder="ana@ejemplo.com"
+                      className="w-full bg-transparent border-b border-card-border focus:border-accent-600 px-0 py-3 font-sans text-base outline-none text-fg transition-colors placeholder:text-fg/20"
                     />
                   </div>
 
-                  {/* Row: WhatsApp / Mobile Phone */}
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="whatsapp" className="font-sans text-xs font-bold uppercase tracking-wider text-fg/50">
+                  <div className="flex flex-col gap-3">
+                    <label htmlFor="whatsapp" className="font-sans text-xs font-semibold uppercase tracking-[0.1em] text-fg/50">
                       Número de WhatsApp
                     </label>
                     <input
@@ -148,15 +143,14 @@ export function RegisterForm() {
                       required
                       value={formData.whatsapp}
                       onChange={handleChange}
-                      placeholder="Ej. 300 123 4567"
-                      className="w-full bg-bg border border-card-border focus:border-cobalt-500 focus:ring-1 focus:ring-cobalt-500 rounded-xl px-4 py-3 font-sans text-sm outline-none text-fg transition-colors placeholder:text-fg/30"
+                      placeholder="300 123 4567"
+                      className="w-full bg-transparent border-b border-card-border focus:border-accent-600 px-0 py-3 font-sans text-base outline-none text-fg transition-colors placeholder:text-fg/20"
                     />
                   </div>
 
-                  {/* Row: City */}
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="city" className="font-sans text-xs font-bold uppercase tracking-wider text-fg/50">
-                      Ciudad o Municipio
+                  <div className="flex flex-col gap-3">
+                    <label htmlFor="city" className="font-sans text-xs font-semibold uppercase tracking-[0.1em] text-fg/50">
+                      Ciudad
                     </label>
                     <input
                       type="text"
@@ -165,52 +159,49 @@ export function RegisterForm() {
                       required
                       value={formData.city}
                       onChange={handleChange}
-                      placeholder="Ej. Medellín, Antioquia"
-                      className="w-full bg-bg border border-card-border focus:border-cobalt-500 focus:ring-1 focus:ring-cobalt-500 rounded-xl px-4 py-3 font-sans text-sm outline-none text-fg transition-colors placeholder:text-fg/30"
+                      placeholder="Medellín"
+                      className="w-full bg-transparent border-b border-card-border focus:border-accent-600 px-0 py-3 font-sans text-base outline-none text-fg transition-colors placeholder:text-fg/20"
                     />
                   </div>
 
-                  {/* Row: Sales Experience */}
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="experience" className="font-sans text-xs font-bold uppercase tracking-wider text-fg/50">
-                      ¿Tienes experiencia en ventas por catálogo?
+                  <div className="flex flex-col gap-3">
+                    <label htmlFor="experience" className="font-sans text-xs font-semibold uppercase tracking-[0.1em] text-fg/50">
+                      Experiencia en Ventas
                     </label>
                     <select
                       id="experience"
                       name="experience"
                       value={formData.experience}
                       onChange={handleChange}
-                      className="w-full bg-bg border border-card-border focus:border-cobalt-500 focus:ring-1 focus:ring-cobalt-500 rounded-xl px-4 py-3 font-sans text-sm outline-none text-fg transition-colors"
+                      className="w-full bg-transparent border-b border-card-border focus:border-accent-600 px-0 py-3 font-sans text-base outline-none text-fg transition-colors appearance-none"
                     >
-                      <option value="no">No, soy principiante</option>
-                      <option value="yes">Sí, vendo o he vendido por catálogo</option>
-                      <option value="other">Vendo otros productos de forma independiente</option>
+                      <option value="no">Sin experiencia</option>
+                      <option value="yes">Con experiencia en catálogo</option>
+                      <option value="other">Independiente en otros rubros</option>
                     </select>
                   </div>
 
-                  {/* Error block if applicable */}
                   {status === "error" && (
-                    <div className="p-4 rounded-xl bg-rose-500/5 border border-rose-500/10 flex items-start gap-3 text-rose-600 dark:text-rose-500 font-sans text-sm">
-                      <Warning weight="bold" className="w-5 h-5 shrink-0 mt-0.5" />
+                    <div className="p-5 rounded-2xl bg-rose-50 flex items-center gap-4 text-rose-600 font-sans text-sm">
+                      <Warning className="w-5 h-5 shrink-0" weight="regular" />
                       <p>{errorMessage}</p>
                     </div>
                   )}
 
-                  {/* Submit Button */}
                   <Button
                     variant="primary"
                     size="lg"
                     type="submit"
                     disabled={status === "loading"}
-                    className="w-full justify-center"
+                    className="w-full mt-6"
                   >
                     {status === "loading" ? (
                       <>
-                        <SpinnerGap weight="bold" className="w-5 h-5 animate-spin" />
-                        Registrando datos...
+                        <SpinnerGap className="w-5 h-5 animate-spin" weight="regular" />
+                        Procesando...
                       </>
                     ) : (
-                      "Iniciar Mi Registro Gratis"
+                      "Enviar Registro"
                     )}
                   </Button>
 

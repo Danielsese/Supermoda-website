@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline" | "ghost" | "gold";
+  variant?: "primary" | "secondary" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
   href?: string;
   showArrow?: boolean;
@@ -25,23 +25,22 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-sans font-medium rounded-full transition-all duration-200 cursor-pointer active:scale-97 select-none outline-none focus-visible:ring-2 focus-visible:ring-cobalt-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg";
+      "inline-flex items-center justify-center font-sans font-medium rounded-full transition-all duration-300 cursor-pointer active:translate-y-[1px] select-none outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg";
 
     const variants = {
       primary:
-        "bg-cobalt-500 hover:bg-cobalt-600 text-white shadow-sm shadow-cobalt-500/10",
+        "bg-accent-600 hover:bg-accent-900 text-white shadow-sm",
       secondary:
-        "bg-card-bg hover:bg-card-border/50 text-fg border border-card-border",
+        "bg-card-bg hover:bg-neutral-100 text-neutral-900 border border-card-border",
       outline:
-        "bg-transparent hover:bg-cobalt-500/5 text-cobalt-500 border border-cobalt-500/30 hover:border-cobalt-500/60 dark:text-cobalt-500 dark:border-cobalt-500/20",
-      ghost: "bg-transparent hover:bg-card-border/30 text-fg",
-      gold: "bg-gold-500 hover:bg-gold-600 text-foreground font-semibold shadow-sm shadow-gold-500/10",
+        "bg-transparent hover:bg-accent-50 text-accent-900 border border-accent-900/30 dark:text-accent-50 dark:border-accent-50/30 dark:hover:bg-accent-900/20",
+      ghost: "bg-transparent hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-900 dark:text-neutral-50",
     };
 
     const sizes = {
-      sm: "text-xs px-4 py-2 gap-1.5",
-      md: "text-sm px-6 py-3 gap-2",
-      lg: "text-base px-8 py-4 gap-2.5",
+      sm: "text-xs px-5 py-2.5 gap-1.5",
+      md: "text-sm px-7 py-3.5 gap-2",
+      lg: "text-base px-10 py-5 gap-2.5",
     };
 
     const content = (
@@ -50,7 +49,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {showArrow && (
           <ArrowRight
             weight="bold"
-            className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
+            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
           />
         )}
       </>
