@@ -23,12 +23,12 @@ export function CalculatorSection() {
   };
 
   return (
-    <section id="calculadora" className="py-24 bg-bg border-t border-card-border transition-colors duration-300 relative overflow-hidden">
+    <section id="calculadora" className="py-32 lg:py-36 bg-bg border-t border-card-border transition-colors duration-300 relative overflow-hidden">
       {/* Decorative Blur Background */}
       <div className="absolute right-0 top-1/2 w-96 h-96 rounded-full bg-gold-500/5 blur-3xl pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           {/* Left Text Explainer */}
           <div className="lg:col-span-5 text-left">
@@ -65,7 +65,7 @@ export function CalculatorSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-card-bg border border-card-border p-8 md:p-12 rounded-3xl shadow-xl shadow-fg/5 flex flex-col gap-8 transition-colors duration-300"
+              className="bg-card-bg border border-card-border p-8 md:p-12 rounded-3xl shadow-xl shadow-fg/5 flex flex-col gap-10 transition-colors duration-300"
             >
               {/* Sales Slider Input */}
               <div className="flex flex-col gap-4">

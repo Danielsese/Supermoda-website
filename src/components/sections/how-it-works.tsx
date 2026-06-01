@@ -6,11 +6,11 @@ import { Button } from "../ui/button";
 
 export function HowItWorks() {
   return (
-    <section id="como-funciona" className="py-24 bg-card-bg border-t border-card-border transition-colors duration-300">
+    <section id="como-funciona" className="py-32 lg:py-36 bg-card-bg border-t border-card-border transition-colors duration-300">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         
         {/* Section Header */}
-        <div className="max-w-2xl mb-16 text-left">
+        <div className="max-w-2xl mb-20 text-left">
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-fg font-normal tracking-tight leading-none mb-4">
             Emprende con Confianza
           </h2>
@@ -20,7 +20,7 @@ export function HowItWorks() {
         </div>
 
         {/* Bento Grid layout - Stack on mobile/tablet, side-by-side on lg desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
           
           {/* Cell 1: High Contrast Saturated Commission Block */}
           <motion.div
@@ -28,7 +28,7 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-4 bg-cobalt-500 rounded-2xl p-8 md:p-10 flex flex-col justify-between h-[340px] shadow-lg shadow-cobalt-500/10 text-white relative overflow-hidden"
+            className="lg:col-span-4 bg-cobalt-500 rounded-2xl p-8 md:p-10 flex flex-col justify-between min-h-[360px] shadow-lg shadow-cobalt-500/10 text-white relative overflow-hidden"
           >
             {/* Background Light Pattern */}
             <div className="absolute -right-12 -bottom-12 w-48 h-48 rounded-full bg-white/5 blur-2xl pointer-events-none" />
@@ -54,7 +54,7 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-8 bg-bg border border-card-border rounded-2xl p-8 md:p-10 flex flex-col justify-between h-[340px] transition-colors duration-300"
+            className="lg:col-span-8 bg-bg border border-card-border rounded-2xl p-8 md:p-10 flex flex-col justify-between min-h-[300px] transition-colors duration-300"
           >
             <div className="w-12 h-12 rounded-full bg-cobalt-500/5 dark:bg-cobalt-500/10 flex items-center justify-center border border-cobalt-500/10">
               <ShieldCheck weight="bold" className="w-6 h-6 text-cobalt-500" />
@@ -84,7 +84,7 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-8 bg-bg border border-card-border rounded-2xl p-8 md:p-10 flex flex-col justify-between h-[340px] transition-colors duration-300"
+            className="lg:col-span-8 bg-bg border border-card-border rounded-2xl p-8 md:p-10 flex flex-col justify-between min-h-[300px] transition-colors duration-300"
           >
             <div className="w-12 h-12 rounded-full bg-cobalt-500/5 dark:bg-cobalt-500/10 flex items-center justify-center border border-cobalt-500/10">
               <DeviceMobile weight="bold" className="w-6 h-6 text-cobalt-500" />
@@ -106,7 +106,7 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-4 bg-bg border border-card-border rounded-2xl p-8 md:p-10 flex flex-col justify-between h-[340px] transition-colors duration-300"
+            className="lg:col-span-4 bg-bg border border-card-border rounded-2xl p-8 md:p-10 flex flex-col justify-between min-h-[300px] transition-colors duration-300"
           >
             <div className="w-12 h-12 rounded-full bg-cobalt-500/5 dark:bg-cobalt-500/10 flex items-center justify-center border border-cobalt-500/10">
               <UsersThree weight="bold" className="w-6 h-6 text-cobalt-500" />

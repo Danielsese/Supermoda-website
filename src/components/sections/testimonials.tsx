@@ -47,16 +47,16 @@ export function Testimonials() {
   const current = testimonials[index];
 
   return (
-    <section id="testimonios" className="py-24 bg-card-bg border-t border-card-border transition-colors duration-300 relative overflow-hidden">
+    <section id="testimonios" className="py-32 lg:py-40 bg-card-bg border-t border-card-border transition-colors duration-300 relative overflow-hidden">
       <div className="max-w-[1000px] mx-auto px-6 md:px-12 text-center flex flex-col items-center">
         
         {/* Quotes Icon */}
-        <div className="w-16 h-16 rounded-full bg-cobalt-500/5 dark:bg-cobalt-500/10 border border-cobalt-500/10 flex items-center justify-center text-cobalt-500 mb-10">
+        <div className="w-16 h-16 rounded-full bg-cobalt-500/5 dark:bg-cobalt-500/10 border border-cobalt-500/10 flex items-center justify-center text-cobalt-500 mb-12">
           <Quotes weight="fill" className="w-8 h-8" />
         </div>
 
         {/* Carousel Content Frame */}
-        <div className="min-h-[160px] md:min-h-[140px] flex items-center justify-center w-full mb-10">
+        <div className="min-h-[180px] md:min-h-[160px] flex items-center justify-center w-full mb-10">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}

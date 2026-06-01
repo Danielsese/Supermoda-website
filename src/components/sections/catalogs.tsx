@@ -81,11 +81,11 @@ export function Catalogs() {
   ];
 
   return (
-    <section id="descargas" className="py-24 bg-card-bg border-t border-card-border transition-colors duration-300">
+    <section id="descargas" className="py-32 lg:py-36 bg-card-bg border-t border-card-border transition-colors duration-300">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         
         {/* Section Header */}
-        <div className="max-w-2xl mb-16 text-left">
+        <div className="max-w-2xl mb-20 text-left">
           <div className="text-cobalt-500 font-sans text-xs font-bold uppercase tracking-wider mb-3">
             Catálogos Interactivos
           </div>
@@ -98,7 +98,7 @@ export function Catalogs() {
         </div>
 
         {/* 3-Column Luxury Grid for Catalogs */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {catalogs.map((item, i) => (
             <motion.div
               key={item.name}
@@ -106,7 +106,7 @@ export function Catalogs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.6, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-bg border border-card-border hover:border-cobalt-500/30 rounded-3xl p-6 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-[450px] relative group"
+              className="bg-bg border border-card-border hover:border-cobalt-500/30 rounded-3xl p-6 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[460px] relative group"
             >
               {/* Cover Brand Logo Frame */}
               <div className="relative w-full h-[220px] rounded-2xl overflow-hidden bg-white p-6 border border-card-border flex items-center justify-center">

@@ -48,11 +48,11 @@ export function RegisterForm() {
   };
 
   return (
-    <section id="registro" className="py-24 bg-bg border-t border-card-border transition-colors duration-300 relative">
-      <div className="max-w-[700px] mx-auto px-6">
+    <section id="registro" className="py-32 lg:py-36 bg-bg border-t border-card-border transition-colors duration-300 relative">
+      <div className="max-w-[760px] mx-auto px-6">
         
         {/* Form Container Card */}
-        <div className="bg-card-bg border border-card-border p-8 md:p-12 rounded-3xl shadow-xl shadow-fg/5 transition-colors duration-300">
+        <div className="bg-card-bg border border-card-border p-10 md:p-14 rounded-3xl shadow-xl shadow-fg/5 transition-colors duration-300">
           
           <AnimatePresence mode="wait">
             {status === "success" ? (
@@ -100,7 +100,7 @@ export function RegisterForm() {
                 </div>
 
                 {/* Main Form Elements */}
-                <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-7">
                   
                   {/* Row: Name */}
                   <div className="flex flex-col gap-2">

@@ -7,8 +7,8 @@ import { Button } from "../ui/button";
 
 export function Footer() {
   return (
-    <footer className="bg-card-bg border-t border-card-border pt-16 pb-12 transition-colors duration-300">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+    <footer className="bg-card-bg border-t border-card-border pt-20 pb-16 transition-colors duration-300">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-14 md:gap-10">
         
         {/* Brand Footprint Column */}
         <div className="flex flex-col gap-6 md:col-span-1">

@@ -11,7 +11,7 @@ export function Categories() {
       description: "Diseños que inspiran seguridad y elegancia para el día a día.",
       image: "/hero-fashion.png",
       span: "lg:col-span-8",
-      height: "h-[350px] lg:h-[420px]",
+      height: "h-[380px] lg:h-[480px]",
       overlay: "from-black/70 via-black/40 to-transparent",
       textLight: true,
     },
@@ -20,7 +20,7 @@ export function Categories() {
       description: "Confort y estilo de vanguardia para dar cada paso con firmeza.",
       image: "/shoes-category.png",
       span: "lg:col-span-4",
-      height: "h-[350px] lg:h-[420px]",
+      height: "h-[380px] lg:h-[480px]",
       overlay: "from-bg/95 via-bg/40 to-transparent dark:from-bg/95 dark:via-bg/40",
       textLight: false,
     },
@@ -29,7 +29,7 @@ export function Categories() {
       description: "Cuidado orgánico y cosmética que realzan tu bienestar natural.",
       image: "/beauty-category.png",
       span: "lg:col-span-4",
-      height: "h-[350px] lg:h-[420px]",
+      height: "h-[380px] lg:h-[480px]",
       overlay: "from-bg/95 via-bg/40 to-transparent dark:from-bg/95 dark:via-bg/40",
       textLight: false,
     },
@@ -38,18 +38,18 @@ export function Categories() {
       description: "Detalles artesanales y textiles premium para crear espacios cálidos.",
       image: "/home-category.png",
       span: "lg:col-span-8",
-      height: "h-[350px] lg:h-[420px]",
+      height: "h-[380px] lg:h-[480px]",
       overlay: "from-black/70 via-black/40 to-transparent",
       textLight: true,
     },
   ];
 
   return (
-    <section id="catalogos" className="py-24 bg-bg border-t border-card-border transition-colors duration-300">
+    <section id="catalogos" className="py-32 lg:py-36 bg-bg border-t border-card-border transition-colors duration-300">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row items-baseline justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row items-baseline justify-between gap-6 mb-20">
           <div className="max-w-xl">
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-fg font-normal tracking-tight leading-none mb-4">
               Nuestras Líneas de Catálogo
@@ -64,7 +64,7 @@ export function Categories() {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.title}

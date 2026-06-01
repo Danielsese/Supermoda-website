@@ -30,11 +30,11 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-[100dvh] flex items-center pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-bg transition-colors duration-300">
+    <section className="relative min-h-[100dvh] flex items-center pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden bg-bg transition-colors duration-300">
       {/* Background Decorative Blob */}
       <div className="absolute top-1/4 left-1/3 w-96 h-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cobalt-500/5 blur-3xl pointer-events-none dark:bg-cobalt-500/10" />
 
-      <div className="max-w-[1400px] w-full mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center z-10">
+      <div className="max-w-[1400px] w-full mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-12 items-center z-10">
         
         {/* Left Copy Column */}
         <motion.div
@@ -55,7 +55,7 @@ export function Hero() {
           {/* Headline */}
           <motion.h1
             variants={itemVariants}
-            className="font-serif text-4xl sm:text-5xl lg:text-[5.5rem] leading-[1.05] tracking-tight text-fg font-normal mb-6 max-w-[12ch] sm:max-w-[10ch]"
+            className="font-serif text-5xl sm:text-6xl lg:text-[5.5rem] leading-[1.05] tracking-tight text-fg font-normal mb-8 max-w-[18ch] sm:max-w-[16ch]"
           >
             Cumple tus sueños desde <span className="italic font-light text-cobalt-500">casa</span>
           </motion.h1>
@@ -63,7 +63,7 @@ export function Hero() {
           {/* Subtext (under 20 words, strictly) */}
           <motion.p
             variants={itemVariants}
-            className="font-sans text-lg md:text-xl text-fg/60 leading-relaxed mb-8 max-w-[32ch]"
+            className="font-sans text-lg md:text-xl text-fg/65 leading-relaxed mb-10 max-w-[38ch]"
           >
             Vende moda, calzado y belleza por catálogo virtual y gana hasta el 30% sin inversión inicial.
           </motion.p>
