@@ -10,8 +10,8 @@ export function Categories() {
       title: "Moda & Lencería Femenina",
       description: "Diseños que inspiran seguridad y elegancia para el día a día.",
       image: "/hero-fashion.png",
-      span: "md:col-span-8",
-      height: "h-[350px] md:h-[420px]",
+      span: "lg:col-span-8",
+      height: "h-[350px] lg:h-[420px]",
       overlay: "from-black/70 via-black/40 to-transparent",
       textLight: true,
     },
@@ -19,8 +19,8 @@ export function Categories() {
       title: "Calzado Familiar",
       description: "Confort y estilo de vanguardia para dar cada paso con firmeza.",
       image: "/shoes-category.png",
-      span: "md:col-span-4",
-      height: "h-[350px] md:h-[420px]",
+      span: "lg:col-span-4",
+      height: "h-[350px] lg:h-[420px]",
       overlay: "from-bg/95 via-bg/40 to-transparent dark:from-bg/95 dark:via-bg/40",
       textLight: false,
     },
@@ -28,8 +28,8 @@ export function Categories() {
       title: "Belleza & Salud",
       description: "Cuidado orgánico y cosmética que realzan tu bienestar natural.",
       image: "/beauty-category.png",
-      span: "md:col-span-4",
-      height: "h-[350px] md:h-[420px]",
+      span: "lg:col-span-4",
+      height: "h-[350px] lg:h-[420px]",
       overlay: "from-bg/95 via-bg/40 to-transparent dark:from-bg/95 dark:via-bg/40",
       textLight: false,
     },
@@ -37,8 +37,8 @@ export function Categories() {
       title: "Hogar & Vacaciones",
       description: "Detalles artesanales y textiles premium para crear espacios cálidos.",
       image: "/home-category.png",
-      span: "md:col-span-8",
-      height: "h-[350px] md:h-[420px]",
+      span: "lg:col-span-8",
+      height: "h-[350px] lg:h-[420px]",
       overlay: "from-black/70 via-black/40 to-transparent",
       textLight: true,
     },
@@ -64,7 +64,7 @@ export function Categories() {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
           {categories.map((cat, i) => (
             <motion.div
               key={cat.title}
@@ -72,7 +72,7 @@ export function Categories() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
-              className={`${cat.span} ${cat.height} group relative rounded-2xl overflow-hidden border border-card-border shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-end p-6 md:p-8 cursor-pointer`}
+              className={`${cat.span} ${cat.height} group relative rounded-2xl overflow-hidden border border-card-border shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-end p-8 md:p-10 cursor-pointer`}
             >
               {/* Image Frame */}
               <Image

@@ -30,7 +30,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-[100dvh] flex items-center pt-24 pb-16 md:py-0 overflow-hidden bg-bg transition-colors duration-300">
+    <section className="relative min-h-[100dvh] flex items-center pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-bg transition-colors duration-300">
       {/* Background Decorative Blob */}
       <div className="absolute top-1/4 left-1/3 w-96 h-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cobalt-500/5 blur-3xl pointer-events-none dark:bg-cobalt-500/10" />
 
